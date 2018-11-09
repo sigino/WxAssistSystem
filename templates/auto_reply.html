@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content_main %}
+    <div class="forms validation">
+        <h2 class="title1">自动回复：({{ auto_reply_status }})</h2>
+        <div class="form-three widget-shadow">
+            <div data-example-id="form-validation-states">
+                <form action="{{ url_for('auto_reply') }}" method="post">
+                    <div class="form-group has-success"><label class="control-label"
+                                                               for="inputSuccess1">自动回复内容</label>
+                        <input name="auto_reply_content" value="{{ auto_reply_content }}" type="text"
+                               class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">
+                        <span
+                                id="helpBlock2" class="help-block">设置为空则为取消自动回复</span>
+                    </div>
+                    <div class="form-group has-warning"><label class="control-label"
+                                                               for="inputWarning1">针对某用户自动回复</label>
+                        <input name="auto_reply_person" value="{{ auto_reply_person }}" type="text"
+                               class="form-control" id="inputWarning1">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">设置</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

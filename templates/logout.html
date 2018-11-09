@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content_main %}
+    <h2 class="title1">退出登陆</h2>
+    <div class="blank-page widget-shadow scroll" id="style-2 div1">
+        <p>
+            您已成功退出登陆，下次重新登陆需要重新扫描二维码！<a href="{{ url_for('login') }}">重新登陆</a>
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content_main %}
+<div class="main-page compose">
+				<h2 class="title1">消息发送（单发、群发）</h2>
+				<div class="col-md-8 compose-right widget-shadow">
+					<div class="panel-default">
+						<div class="panel-heading">
+							编辑信息
+						</div>
+						<div class="panel-body">
+							<div class="alert alert-info">
+								接受者ID以@符号开头，例如:@张三@李四@王五@群名称
+							</div>
+							<form action="{{ url_for('super_reply') }}" method="post" class="com-mail">
+								<input name="namestr" type="text" class="form-control1 control3" placeholder="发送到 :" value="{{ names }}">
+								<input name="timestr" type="text" class="form-control1 control3" placeholder="发送时间 :">
+								<textarea name="contentstr" rows="6" class="form-control1 control2" placeholder="内容 :" ></textarea>
+{#								<div class="form-group">#}
+{#									<div class="btn btn-default btn-file">#}
+{#										<i class="fa fa-paperclip"></i> 文件#}
+{#										<input type="file" name="attachment">#}
+{#									</div>#}
+{#									<p class="help-block">最大： 32MB</p>#}
+{#								</div>#}
+								<input type="submit" value="发送">
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+{% endblock %}

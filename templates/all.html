@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content_main %}
+    <div class="main-page">
+        <div class="tables">
+            <h2 class="title1">全部</h2>
+            <div class="bs-example widget-shadow" data-example-id="hoverable-table">
+                <h4>朋友:</h4>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>昵称</th>
+                        <th>性别</th>
+                        <th>地区</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for f in all_friends %}
+                        <tr>
+                            <th scope="row">{{ f['number'] }}</th>
+                            <td>{{ f['username'] }}</td>
+                            <td>{{ f['sex'] }}</td>
+                            <td>{{ f['city'] }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <h4>群组:</h4>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>群名称</th>
+                        <th>群主</th>
+                        <th>群成员数</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for g in all_groups %}
+                        <tr>
+                            <th scope="row">{{ g['number'] }}</th>
+                            <td>{{ g['groupname'] }}</td>
+                            <td>{{ g['owner'] }}</td>
+                            <td>{{ g['members'] }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+                <h4>公众号:</h4>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>公众号名称</th>
+                        <th colspan="2">签名</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for m in all_mps %}
+                        <tr>
+                            <th scope="row">{{ m['number'] }}</th>
+                            <td>{{ m['mpname'] }}</td>
+                            <td colspan="2">{{ m['signature'] }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
