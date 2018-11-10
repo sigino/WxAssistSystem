@@ -31,25 +31,6 @@ rshutdown_status = u'已关闭'
 festival_msg = u'已关闭'
 
 REMOTE_HOST = "https://pyecharts.github.io/assets/js"
-
-
-@app.route('/echarts')
-def echarts():
-    attr = ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
-    v1 = [5, 20, 36, 10, 75, 90]
-    v2 = [10, 25, 8, 60, 20, 80]
-    bar = Bar("柱状图数据堆叠示例")
-    bar.add("商家A", attr, v1, is_stack=True)
-    bar.add("商家B", attr, v2, is_stack=True)
-
-    return render_template(
-        "pyecharts.html",
-        myechart=bar.render_embed(),
-        host=REMOTE_HOST,
-        script_list=bar.get_js_dependencies()
-    )
-
-
 def has_logined(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
